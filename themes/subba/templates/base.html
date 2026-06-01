@@ -26,22 +26,22 @@
   <meta name="twitter:description" content="{% block twitter_description %}Lead AI Engineer building production ML systems and developer tools.{% endblock %}">
   <meta name="twitter:image" content="{{ SITEURL }}/images/social_share.png">
 
+  <!-- Main Stylesheet (Loaded first to prevent unstyled flash) -->
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+
   <!-- Font Preloads (Self-hosted) -->
   <link rel="preload" href="{{ SITEURL }}/theme/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ SITEURL }}/theme/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ SITEURL }}/theme/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
-  
   <!-- KaTeX Math Support on specific pages if required -->
   {% block extra_head %}{% endblock %}
 </head>
-<body class="fade-in">
+<body>
   
   <a href="#content" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;" onfocus="this.style.position='static'; this.style.width='auto'; this.style.height='auto';" onblur="this.style.position='absolute'; this.style.width='1px'; this.style.height='1px';">Skip to content</a>
 
-  <div class="container">
+  <div class="container fade-in">
     <header class="nav-header">
       <div class="nav-logo">
         <a href="{{ SITEURL }}/">subba.dev</a>
