@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Projects &middot; {{ SITENAME }}{% endblock %}
+
+{% block description %}Exhaustive overview of machine learning platforms, LLM serving engines, RAG pipelines, and high-performance MLOps solutions built by Subba Taniparti.{% endblock %}
+
+{% block og_title %}Projects{% endblock %}
+{% block og_description %}High-signal ML systems, model serving engines, and data pipeline projects.{% endblock %}
+
+{% block twitter_title %}Projects{% endblock %}
+{% block twitter_description %}High-signal ML systems, model serving engines, and data pipeline projects.{% endblock %}
+
+{% block content %}
+<h1 style="font-size: 32px; font-weight: 600; margin-bottom: 0.5rem;">Projects</h1>
+<p style="font-family: 'Inter', sans-serif; font-size: 15px; color: var(--muted); margin-bottom: 2rem; max-width: var(--line-length);">
+  Selected systems, pipelines, and libraries highlighting ML infrastructure and engineering depth. Focus is entirely on model serving latency, quantization performance, vector retrieval, and operational stability.
+</p>
+
+<ul class="item-list">
+  {% if PROJECTS_DATA %}
+    {% for proj in PROJECTS_DATA %}
+    <li class="item-row" style="flex-direction: column; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--border);">
+      <div style="width: 100%;">
+        <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer" style="font-size: 18px;">{{ proj.name }}</a>
+        <p class="item-row-desc" style="font-size: 15px; line-height: 1.6; margin-top: 0.5rem; max-width: var(--line-length);">{{ proj.description }}</p>
+      </div>
+      <div class="badge-row" style="margin-top: 0.75rem;">
+        {% for tag in proj.tags %}
+        <span class="badge">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  {% else %}
+    <li style="font-size: 15px; color: var(--muted); padding: 0.5rem 0;">No projects listed yet.</li>
+  {% endif %}
+</ul>
+
+<div class="back-link" style="margin-top: 2rem;">
+  <a href="{{ SITEURL }}/">&larr; back to home</a>
+</div>
+{% endblock %}

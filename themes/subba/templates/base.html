@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  
+  <meta name="description" content="{% block description %}Lead AI Engineer building production ML systems, scalable MLOps pipelines, and Generative AI services.{% endblock %}">
+  
+  <!-- Canonical & Feeds -->
+  <link rel="canonical" href="{{ SITEURL }}/{{ output_file if output_file else '' }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} RSS Feed" href="{{ SITEURL }}/feed.xml">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}/{{ output_file if output_file else '' }}">
+  <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Lead AI Engineer building production ML systems and developer tools.{% endblock %}">
+  <meta property="og:image" content="{{ SITEURL }}/images/social_share.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ SITEURL }}/{{ output_file if output_file else '' }}">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ SITENAME }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}Lead AI Engineer building production ML systems and developer tools.{% endblock %}">
+  <meta name="twitter:image" content="{{ SITEURL }}/images/social_share.png">
+
+  <!-- Font Preloads (Self-hosted) -->
+  <link rel="preload" href="{{ SITEURL }}/theme/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ SITEURL }}/theme/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ SITEURL }}/theme/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+  
+  <!-- KaTeX Math Support on specific pages if required -->
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="fade-in">
+  
+  <a href="#content" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;" onfocus="this.style.position='static'; this.style.width='auto'; this.style.height='auto';" onblur="this.style.position='absolute'; this.style.width='1px'; this.style.height='1px';">Skip to content</a>
+
+  <div class="container">
+    <header class="nav-header">
+      <div class="nav-logo">
+        <a href="{{ SITEURL }}/">subba.dev</a>
+      </div>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="{{ SITEURL }}/writing/" {% if page_name == 'archives' or output_file and 'writing/' in output_file %}class="active"{% endif %}>writing</a>
+        <a href="{{ SITEURL }}/projects/" {% if page_name == 'projects' or output_file and 'projects/' in output_file %}class="active"{% endif %}>projects</a>
+        <a href="{{ SITEURL }}/cv/" {% if page_name == 'cv' or output_file and 'cv/' in output_file %}class="active"{% endif %}>cv</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div>
+        &copy; {{ CURRENT_YEAR }} Subba Taniparti &middot; Last updated: {{ LAST_UPDATED }}
+      </div>
+      <div>
+        <a href="https://github.com/ScaleSynthAI" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
+        <a href="{{ SITEURL }}/feed.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Schema JSON-LD for rich snippets -->
+  {% block schema_ld %}{% endblock %}
+
+</body>
+</html>

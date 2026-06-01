@@ -1,0 +1,24 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pelican output and state files
+output/
+cache/
+
+# OS metadata
+.DS_Store
+
+# IDE / local configuration
+.idea/
+.vscode/
+.antigravity/
+.antigravity-ide/
+.gemini/

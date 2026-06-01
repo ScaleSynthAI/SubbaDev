@@ -1,0 +1,136 @@
+{
+  "name": "Subba Taniparti",
+  "credentials": [
+    "MS",
+    "CKA",
+    "ADE"
+  ],
+  "title": "Lead AI Engineer",
+  "location": "Raleigh-Durham, NC",
+  "email": "sred.1299@gmail.com",
+  "phone": "(814) 844-5012",
+  "github": "https://github.com/ScaleSynthAI",
+  "linkedin": "https://linkedin.com/in/staniparti",
+  "x": "",
+  "google_scholar": "",
+  "experience": [
+    {
+      "company": "MASTERCARD",
+      "location": "Remote, NC",
+      "title": "Lead AI Engineer \u2013 AI Center of Excellence",
+      "start": "Sep 2025",
+      "end": "Present",
+      "bullets": [
+        "Led the development and production deployment of the MAP (MasterCard Assistant Platform) AI Service, including model-serving jobs, inference endpoints, Databricks assets, and production-grade configurations.",
+        "Architected and deployed production-grade Generative AI services on AWS, supporting LLM-based inference workflows, secure model serving, and low-latency API access via EKS and event-driven orchestration.",
+        "Designed and operationalized RAG-style AI service runtimes, integrating structured and unstructured data pipelines, retrieval workflows, and model orchestration for enterprise AI use cases.",
+        "Built and hardened GenAI guardrails, including prompt protection patterns, safety filtering, and early PII/prohibited-content detection aligned with responsible AI standards.",
+        "Led end-to-end GenAIOps pipelines, covering CI/CD, environment promotion, model runtime configuration, health checks, and observability using Datadog and Splunk.",
+        "Partnered with data scientists and product teams to translate business workflows into scalable AI services, ensuring compliance, resilience, and consistent production behavior.",
+        "Improved production stability by diagnosing and resolving systemic failures across EKS workloads, service bindings, schema evolution, and environment-specific configuration, resulting in sustained \u201cgreen\u201d deployments.",
+        "Acted as technical lead for AI platform architecture, influencing engineering standards, deployment patterns, and runtime best practices across multiple teams.",
+        "Optimized EKS deployments for MAP by improving workload readiness, health-check reliability, configuration accuracy, and container lifecycle behaviours.",
+        "Strengthened environment and dependency management by validating versioning, runtime compatibility, and system-to-system communication for critical MAP components."
+      ]
+    },
+    {
+      "company": "MASTERCARD",
+      "location": "Remote, NC",
+      "title": "Senior Cloud Engineer \u2013 AI/ML Enablement & AWS Cloud Platform",
+      "start": "Sep 2022",
+      "end": "Aug 2025",
+      "bullets": [
+        "Led cloud engineering efforts for Mastercard\u2019s South Africa SOIL enablement, ensuring AWS infrastructure, routing, and service configurations were production-ready to support mission-critical payment transactions.",
+        "Supported full ML lifecycle operations, including deployment, performance monitoring, drift detection, feature freshness validation, and rapid remediation of issues such as failing DAGs, container crashes, and latency bottlenecks.",
+        "Enabled secure, scalable AI platforms for regulated financial systems, ensuring high availability, low latency, and strict compliance requirements.",
+        "Collaborated with AI/ML teams to standardize MLOps patterns, deployment workflows, and operational readiness for production AI systems.",
+        "Designed and deployed ML-enabled and GenAI services on AWS (EKS, EC2, S3, IAM, VPC, Private Link), delivering secure, scalable, and compliant AI workloads supporting real-time decisioning and transactional systems."
+      ]
+    },
+    {
+      "company": "BAYER CROP SCIENCE",
+      "location": "St. Louis, Missouri",
+      "title": "Senior Data Engineer \u2013 ML & Data Science Pipelines",
+      "start": "May 2021",
+      "end": "Present",
+      "bullets": [
+        "Built full vision-processing and IoT data pipelines across AWS/GCP to develop and operationalize a model that detects insect mortality from time-separated images, using S3, Lambda, Step Functions, Airflow, Big Query, and Dataflow.",
+        "Built end-to-end Intelligent Data Processing pipelines for computer vision and IoT-based ML models, automating ingestion, feature extraction, and training dataset generation across AWS and GCP.",
+        "Designed scalable pipelines for unstructured data processing, supporting model training and inference workflows using Airflow, Step Functions, S3, BigQuery, and Dataflow.",
+        "Implemented SQL-based feature engineering pipelines in Snowflake to support ML experimentation and production deployment."
+      ]
+    },
+    {
+      "company": "BAYER CROP SCIENCE",
+      "location": "St. Louis, Missouri",
+      "title": "Cloud Data Engineer, Contractor",
+      "start": "Apr 2020",
+      "end": "May 2021",
+      "bullets": [
+        "Developed ingestion and transformation pipelines using Python, SQL, Redshift, S3, and Kafka.",
+        "Deployed cloud infrastructure with CloudFormation and automated job scheduling.",
+        "Supported data warehouses and ODS systems powering ML workloads."
+      ]
+    },
+    {
+      "company": "EQUIFAX",
+      "location": "St. Louis, Missouri",
+      "title": "Sr Data Engineer, Contractor",
+      "start": "Feb 2020",
+      "end": "Apr 2020",
+      "bullets": [
+        "Developed File Hashing to compare data and identify changes and updates to Save Computational Used by GCP Data Flow Jobs."
+      ]
+    },
+    {
+      "company": "BAYER CROP SCIENCE",
+      "location": "St. Louis, Missouri",
+      "title": "Data/Analytics Engineer, Contractor",
+      "start": "June 2018",
+      "end": "Feb 2020",
+      "bullets": [
+        "Developed an automated tool application that increased the percentage of soy harvested by 18% in 2018 and 22% in 2019 compared to 2017 by predicting optimal harvest times based on real-time weather and soil data",
+        "Built APIs using Python3 Flask, FastAPI, and an ASGI Server that substantially reduced API response time by 70% compared to traditional services and followed strict privacy standards",
+        "Helped data scientists to automate their models for efficiency and improved run time by providing more computational power to prediction models."
+      ]
+    },
+    {
+      "company": "ERICSSON INC",
+      "location": "Piscataway, New Jersey",
+      "title": "API/Data Engineer, Contractor",
+      "start": "Jan. 2016",
+      "end": "Jun. 2018",
+      "bullets": [
+        "Designed and Deployed an automated log monitoring tool used by T-Mobile in over 10 countries to measure network usage and predict the following month\u2019s usage, information used to tailor offers and credits to customer behaviour.",
+        "Involved in POC to setup AKS (Azure Kubernetes Service) for Data Scientists."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science, Information Systems Security",
+      "school": "University of the Cumberlands",
+      "start": "2015",
+      "end": "2016",
+      "notes": "Kentucky \u00b7 GPA - 4.0"
+    },
+    {
+      "degree": "Master of Technology, Computer Science",
+      "school": "Jawaharlal Nehru Technological University-Hyderabad India",
+      "start": "2012",
+      "end": "2014",
+      "notes": "GPA - 3.7"
+    }
+  ],
+  "skills": {
+    "Languages": [],
+    "ML/AI": [],
+    "Infra": [],
+    "Tools": []
+  },
+  "certifications": [
+    "Certified Kubernetes Administrator (CKA)",
+    "ADE"
+  ],
+  "publications": []
+}

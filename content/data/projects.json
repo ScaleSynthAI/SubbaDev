@@ -1,0 +1,30 @@
+[
+  {
+    "name": "ApplyRail",
+    "url": "https://github.com/ScaleSynthAI/ApplyRail",
+    "description": "Job portal matching 50K+ postings to international students using Gemini embeddings + pgvector; serves from a single Proxmox node at ~180ms p95.",
+    "tags": ["Flask", "Postgres", "pgvector", "Gemini", "Docker"],
+    "featured": true
+  },
+  {
+    "name": "KernServe",
+    "url": "https://github.com/ScaleSynthAI/KernServe",
+    "description": "Custom LLM inference runtime optimized for 6GB GPUs utilizing custom CUDA-accelerated kernels, dynamic batching, and INT4 quantization to achieve 45+ tokens/sec on local consumer hardware.",
+    "tags": ["Python", "CUDA", "C++", "GGUF", "PyTorch", "vLLM"],
+    "featured": true
+  },
+  {
+    "name": "RAG-Eval",
+    "url": "https://github.com/ScaleSynthAI/RAG-Eval",
+    "description": "Enterprise RAG observability platform calculating semantic similarity, retrieval precision, and answer faithfulness metrics in real-time for Mastercard Assistant Platform (MAP), handling 1.2M monthly queries.",
+    "tags": ["Python", "Databricks", "Splunk", "Datadog", "SageMaker"],
+    "featured": true
+  },
+  {
+    "name": "Bio-Segment",
+    "url": "https://github.com/ScaleSynthAI/Bio-Segment",
+    "description": "Edge-deployed insect mortality detection model running on GCP IoT Core and SageMaker pipelines, automating computer vision analysis of 100K+ daily farm images with an 18% harvest yield gain.",
+    "tags": ["AWS", "GCP", "Step Functions", "Airflow", "BigQuery", "Dataflow"],
+    "featured": true
+  }
+]

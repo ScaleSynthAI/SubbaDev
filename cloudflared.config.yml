@@ -1,0 +1,16 @@
+# cloudflared.config.yml
+# Replace the tunnel UUID and credentials-file with your actual Cloudflare Tunnel values
+tunnel: YOUR_CLOUDFLARE_TUNNEL_UUID
+credentials-file: /etc/cloudflared/tunnel-credentials.json
+
+ingress:
+  # Route the primary domain to our isolated Nginx web container
+  - hostname: subba.dev
+    service: http://subba-web:80
+
+  # Route the www subdomain to the same web container
+  - hostname: www.subba.dev
+    service: http://subba-web:80
+
+  # Catch-all: Route all other unmatched hostnames to a standard 404 responder
+  - service: http_status:404

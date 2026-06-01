@@ -1,0 +1,16 @@
+# komodo.toml deployment configuration for subba.dev
+[stack]
+name = "subba-portfolio"
+description = "Lead AI Engineer personal portfolio and blog for Subba Taniparti"
+compose_file = "docker-compose.yml"
+
+[build]
+name = "subba-web-build"
+dockerfile = "Dockerfile"
+context = "."
+tag = "subba-web:latest"
+autoreload = true
+
+[deploy]
+restart_policy = "unless-stopped"
+network = "subba-network"

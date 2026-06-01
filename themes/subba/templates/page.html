@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} &middot; {{ SITENAME }}{% endblock %}
+
+{% block description %}{{ page.summary|striptags if page.summary else page.title }}{% endblock %}
+
+{% block content %}
+<article class="page">
+  <header style="margin-bottom: 2rem;">
+    <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 0.5rem;">{{ page.title }}</h1>
+  </header>
+  <div class="post-content">
+    {{ page.content }}
+  </div>
+</article>
+{% endblock %}

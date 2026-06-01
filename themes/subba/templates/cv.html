@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}CV / Resume &middot; {{ SITENAME }}{% endblock %}
+
+{% block description %}Curriculum Vitae for Subba Taniparti, Lead AI Engineer. Experience in Generative AI platforms, AWS EKS workloads, computer vision, and high-throughput data engineering.{% endblock %}
+
+{% block og_title %}CV / Resume{% endblock %}
+{% block og_description %}Professional experience, education, and technical competencies of Subba Taniparti.{% endblock %}
+
+{% block twitter_title %}CV / Resume{% endblock %}
+{% block twitter_description %}Professional experience, education, and technical competencies of Subba Taniparti.{% endblock %}
+
+{% block content %}
+<div class="print-btn" style="text-align: right; margin-bottom: 2rem;">
+  <a href="{{ SITEURL }}/theme/cv/SubbaTaniparti.pdf" target="_blank" rel="noopener noreferrer" style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; border: 1px solid var(--accent); padding: 4px 10px; border-radius: 4px; display: inline-block;">Download PDF CV</a>
+</div>
+
+<article class="cv-document">
+  <header class="cv-header">
+    <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 0.25rem;">{{ RESUME_DATA.name }}</h1>
+    {% if RESUME_DATA.credentials %}
+      <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); margin-bottom: 0.5rem;">
+        {{ RESUME_DATA.credentials|join(', ') }}
+      </p>
+    {% endif %}
+    
+    <div class="cv-contact">
+      {% if RESUME_DATA.email %}<span><a href="mailto:{{ RESUME_DATA.email }}">{{ RESUME_DATA.email }}</a></span>{% endif %}
+      {% if RESUME_DATA.phone %}<span>{{ RESUME_DATA.phone }}</span>{% endif %}
+      {% if RESUME_DATA.location %}<span>{{ RESUME_DATA.location }}</span>{% endif %}
+      {% if RESUME_DATA.github %}<span><a href="{{ RESUME_DATA.github }}" target="_blank" rel="noopener noreferrer">github</a></span>{% endif %}
+      {% if RESUME_DATA.linkedin %}<span><a href="{{ RESUME_DATA.linkedin }}" target="_blank" rel="noopener noreferrer">linkedin</a></span>{% endif %}
+    </div>
+  </header>
+
+  <section class="cv-section">
+    <h2>Professional Experience</h2>
+    {% if RESUME_DATA.experience %}
+      {% for job in RESUME_DATA.experience %}
+      <div class="cv-item">
+        <div class="cv-item-title">
+          <span>{{ job.company }}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: normal; color: var(--muted);">
+            {% if job.start %}{{ job.start }} {% endif %}{% if job.end %}&ndash; {{ job.end }}{% endif %}
+          </span>
+        </div>
+        <div class="cv-item-subtitle">
+          {{ job.title }} {% if job.location %}&middot; <span style="font-size: 13px; font-style: normal; color: var(--muted);">{{ job.location }}</span>{% endif %}
+        </div>
+        {% if job.bullets %}
+        <ul class="cv-bullets">
+          {% for bullet in job.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <p style="font-size: 15px; color: var(--muted);">No work experience recorded.</p>
+    {% endif %}
+  </section>
+
+  <section class="cv-section">
+    <h2>Education</h2>
+    {% if RESUME_DATA.education %}
+      {% for edu in RESUME_DATA.education %}
+      <div class="cv-item" style="margin-bottom: 1rem;">
+        <div class="cv-item-school" style="display: flex; justify-content: space-between;">
+          <span>{{ edu.school }}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: normal; color: var(--muted);">
+            {% if edu.start %}{{ edu.start }} {% endif %}{% if edu.end %}&ndash; {{ edu.end }}{% endif %}
+          </span>
+        </div>
+        <div class="cv-item-subtitle" style="margin-bottom: 0;">
+          {{ edu.degree }}{% if edu.notes %} &middot; <span style="font-size: 13px; font-style: normal; color: var(--muted);">{{ edu.notes }}</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p style="font-size: 15px; color: var(--muted);">No education credentials recorded.</p>
+    {% endif %}
+  </section>
+
+  {% set has_skills = false %}
+  {% if RESUME_DATA.skills %}
+    {% for cat, list in RESUME_DATA.skills.items() %}
+      {% if list %}
+        {% set has_skills = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if has_skills %}
+  <section class="cv-section">
+    <h2>Skills</h2>
+    <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+      {% for cat, list in RESUME_DATA.skills.items() %}
+        {% if list %}
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 6px 0; font-weight: 600; width: 140px; vertical-align: top; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted);">{{ cat }}</td>
+          <td style="padding: 6px 0; vertical-align: top;">{{ list|join(', ') }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+  </section>
+  {% endif %}
+
+  {% if RESUME_DATA.certifications %}
+  <section class="cv-section">
+    <h2>Certifications</h2>
+    <ul class="cv-bullets" style="list-style-type: square; font-size: 15px;">
+      {% for cert in RESUME_DATA.certifications %}
+      <li>{{ cert }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

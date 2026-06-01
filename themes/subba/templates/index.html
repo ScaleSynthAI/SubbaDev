@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="intro-section">
+  <h1>Subba Taniparti</h1>
+  <p style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 1.5rem; line-height: 1.4;">
+    Lead AI Engineer building production ML systems and developer tools.
+  </p>
+  <p style="font-size: 18px; line-height: 1.65; margin-bottom: 1.5rem; max-width: var(--line-length);">
+    Based in Raleigh-Durham, NC, I specialize in Retrieval-Augmented Generation (RAG), high-throughput LLM serving infrastructure, and robust MLOps/GenAIOps platforms. Most recently, at Mastercard's AI Center of Excellence, I led the development and deployment of assistant platform runtimes and prompt guardrails on AWS EKS. I focus on engineering reliable, low-latency, and compliant ML systems that solve real-world problems.
+  </p>
+  <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); margin-bottom: 3.5rem;">
+    Find my <a href="{{ SITEURL }}/cv/" style="font-weight: 500;">cv / resume</a> &middot;
+    <a href="https://github.com/ScaleSynthAI" target="_blank" rel="noopener noreferrer" style="font-weight: 500;">github</a> &middot;
+    <a href="mailto:sred.1299@gmail.com" style="font-weight: 500;">email</a>
+  </p>
+</section>
+
+<section class="section" id="writing">
+  <h2>Selected writing</h2>
+  <ul class="item-list">
+    {% if articles %}
+      {% for article in articles[:5] %}
+      <li class="item-row">
+        <div class="item-row-left">
+          <a class="item-row-title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        </div>
+        <div class="item-row-right">
+          {{ article.date|strftime('%b %Y') }}
+        </div>
+      </li>
+      {% endfor %}
+    {% else %}
+      <li style="font-size: 15px; color: var(--muted); padding: 0.5rem 0;">No articles published yet.</li>
+    {% endif %}
+  </ul>
+</section>
+
+<section class="section" id="projects">
+  <h2>Selected projects</h2>
+  <ul class="item-list">
+    {% if PROJECTS_DATA %}
+      {% for proj in PROJECTS_DATA %}
+      <li class="item-row" style="flex-direction: column; align-items: flex-start; padding: 1rem 0;">
+        <div>
+          <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer">{{ proj.name }}</a>
+          <p class="item-row-desc">{{ proj.description }}</p>
+        </div>
+        <div class="badge-row">
+          {% for tag in proj.tags %}
+          <span class="badge">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </li>
+      {% endfor %}
+    {% else %}
+      <li style="font-size: 15px; color: var(--muted); padding: 0.5rem 0;">No projects listed yet.</li>
+    {% endif %}
+  </ul>
+</section>
+
+<section class="section" id="experience">
+  <h2>Experience</h2>
+  <ul class="item-list">
+    {% if RESUME_DATA and RESUME_DATA.experience %}
+      {% for job in RESUME_DATA.experience %}
+      <li class="item-row">
+        <div class="item-row-left">
+          <span class="item-row-title">{{ job.company }} <span style="font-weight: normal; color: var(--muted);">&mdash; {{ job.title }}</span></span>
+        </div>
+        <div class="item-row-right">
+          {% if job.start %}{{ job.start }} {% endif %}{% if job.end %}&ndash; {{ job.end }}{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    {% else %}
+      <li style="font-size: 15px; color: var(--muted); padding: 0.5rem 0;">No experience history loaded.</li>
+    {% endif %}
+  </ul>
+</section>
+
+<section class="section" id="contact" style="margin-bottom: 2rem;">
+  <h2>Contact</h2>
+  <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: var(--muted); margin-top: 0.5rem;">
+    <a href="mailto:sred.1299@gmail.com">sred.1299@gmail.com</a> &middot;
+    <a href="https://github.com/ScaleSynthAI" target="_blank" rel="noopener noreferrer">github.com/ScaleSynthAI</a> &middot;
+    <a href="https://linkedin.com/in/staniparti" target="_blank" rel="noopener noreferrer">linkedin.com/in/staniparti</a>
+  </p>
+</section>
+{% endblock %}
+
+{% block schema_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Subba Taniparti",
+  "jobTitle": "Lead AI Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Mastercard"
+  },
+  "url": "https://subba.dev",
+  "sameAs": [
+    "https://github.com/ScaleSynthAI",
+    "https://linkedin.com/in/staniparti"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Raleigh-Durham",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  }
+}
+</script>
+{% endblock %}

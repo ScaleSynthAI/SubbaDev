@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Writing &middot; {{ SITENAME }}{% endblock %}
+
+{% block description %}Chronological archives of technical articles on ML systems, MLOps, quantization, and web scale systems by Subba Taniparti.{% endblock %}
+
+{% block og_title %}Writing{% endblock %}
+{% block og_description %}Technical articles on ML systems, quantization, and cloud native data pipelines.{% endblock %}
+
+{% block twitter_title %}Writing{% endblock %}
+{% block twitter_description %}Technical articles on ML systems, quantization, and cloud native data pipelines.{% endblock %}
+
+{% block content %}
+<h1 style="font-size: 32px; font-weight: 600; margin-bottom: 2rem;">Writing</h1>
+
+<div class="archives-list">
+  {% if articles %}
+    {% for year, group in articles|groupby('date.year')|reverse %}
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: var(--muted); border: none; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0;">{{ year }}</h2>
+      <ul class="item-list" style="margin-bottom: 2rem;">
+        {% for article in group %}
+        <li class="item-row">
+          <div class="item-row-left">
+            <a class="item-row-title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+          </div>
+          <div class="item-row-right">
+            {{ article.date|strftime('%B %d') }}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p style="font-size: 16px; color: var(--muted);">No articles published yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+pelican>=4.9.0
+markdown>=3.4.0
+python-docx>=0.8.11
+Pillow>=9.5.0
+pygments>=2.15.0
+pelican-sitemap>=1.0.2
