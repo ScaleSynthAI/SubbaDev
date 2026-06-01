@@ -21,7 +21,7 @@
         {% for article in group %}
         <li class="item-row">
           <div class="item-row-left">
-            <a class="item-row-title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            <a class="item-row-title" href="/{{ article.url }}">{{ article.title }}</a>
           </div>
           <div class="item-row-right">
             {{ article.date|strftime('%B %d') }}

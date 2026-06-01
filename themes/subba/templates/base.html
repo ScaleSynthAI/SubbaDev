@@ -44,12 +44,12 @@
   <div class="container fade-in">
     <header class="nav-header">
       <div class="nav-logo">
-        <a href="{{ SITEURL }}/">subba.dev</a>
+        <a href="/">subba.dev</a>
       </div>
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="{{ SITEURL }}/writing/" {% if page_name == 'archives' or output_file and 'writing/' in output_file %}class="active"{% endif %}>writing</a>
-        <a href="{{ SITEURL }}/projects/" {% if page_name == 'projects' or output_file and 'projects/' in output_file %}class="active"{% endif %}>projects</a>
-        <a href="{{ SITEURL }}/cv/" {% if page_name == 'cv' or output_file and 'cv/' in output_file %}class="active"{% endif %}>cv</a>
+        <a href="/writing/" {% if page_name == 'archives' or output_file and 'writing/' in output_file %}class="active"{% endif %}>writing</a>
+        <a href="/projects/" {% if page_name == 'projects' or output_file and 'projects/' in output_file %}class="active"{% endif %}>projects</a>
+        <a href="/cv/" {% if page_name == 'cv' or output_file and 'cv/' in output_file %}class="active"{% endif %}>cv</a>
         <a href="#contact">contact</a>
       </nav>
     </header>
@@ -64,7 +64,7 @@
       </div>
       <div>
         <a href="https://github.com/ScaleSynthAI" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
-        <a href="{{ SITEURL }}/feed.xml">RSS</a>
+        <a href="/feed.xml">RSS</a>
       </div>
     </footer>
   </div>
