@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   subba-web:
     build:
@@ -8,5 +6,6 @@ services:
     container_name: subba-web
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "8090:80"
+
 
