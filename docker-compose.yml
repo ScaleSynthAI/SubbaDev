@@ -7,23 +7,6 @@ services:
       dockerfile: Dockerfile
     container_name: subba-web
     restart: unless-stopped
-    networks:
-      - subba-network
-    # Note: No public ports published. Server is completely isolated.
+    ports:
+      - "8080:80"
 
-  cloudflared-tunnel:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared-tunnel
-    restart: unless-stopped
-    networks:
-      - subba-network
-    volumes:
-      - ./cloudflared.config.yml:/etc/cloudflared/config.yml:ro
-      - ./tunnel-credentials.json:/etc/cloudflared/tunnel-credentials.json:ro
-    command: tunnel --config /etc/cloudflared/config.yml run
-    depends_on:
-      - subba-web
-
-networks:
-  subba-network:
-    driver: bridge
