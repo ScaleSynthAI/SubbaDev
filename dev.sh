@@ -93,17 +93,43 @@ cmd_dev() {
     pelican -r -l -p 8000
 }
 
+cmd_default() {
+    ensure_venv
+    
+    # Check if Pelican is installed in our virtual environment
+    if [ ! -f "venv/bin/pelican" ]; then
+        log_info "Pelican not detected in virtualenv. Running environment setup..."
+        cmd_setup
+    fi
+    
+    # Run extractors
+    cmd_extract
+    
+    # Compile site
+    cmd_compile
+    
+    # Launch browser in background (macOS open command)
+    log_info "Opening http://localhost:8000 in your default browser..."
+    (sleep 1.5 && open "http://localhost:8000") &
+    
+    # Start server with watch/auto-reload
+    log_info "Launching hot-reloading development environment (watching for changes)..."
+    log_info "Press Ctrl+C to terminate."
+    pelican -r -l -p 8000
+}
+
 cmd_help() {
     echo -e "SubbaDev Development Suite Orchestrator"
     echo -e "Usage: ./dev.sh [command]"
     echo -e ""
     echo -e "Available Commands:"
-    echo -e "  ${CYAN}setup${NC}    Initialize virtual environment and install pip dependencies"
-    echo -e "  ${CYAN}extract${NC}  Run extraction engines (parse .docx, fetch fonts, draw social card)"
-    echo -e "  ${CYAN}compile${NC}  Execute Pelican build to output directory"
-    echo -e "  ${CYAN}serve${NC}    Launch standard local preview webserver on port 8000"
-    echo -e "  ${CYAN}dev${NC}      Run hot-reloading dev environment (extracts -> compiles -> serves with watch)"
-    echo -e "  ${CYAN}help${NC}     Show this help message"
+    echo -e "  [no args]  (Default) Automatically setups, extracts, compiles, opens browser, and runs hot-rebuild"
+    echo -e "  ${CYAN}setup${NC}      Initialize virtual environment and install pip dependencies"
+    echo -e "  ${CYAN}extract${NC}    Run extraction engines (parse .docx, fetch fonts, draw social card)"
+    echo -e "  ${CYAN}compile${NC}    Execute Pelican build to output directory"
+    echo -e "  ${CYAN}serve${NC}      Launch standard local preview webserver on port 8000"
+    echo -e "  ${CYAN}dev${NC}        Run hot-reloading dev environment (extracts -> compiles -> serves with watch)"
+    echo -e "  ${CYAN}help${NC}       Show this help message"
     echo -e ""
 }
 
@@ -125,8 +151,11 @@ case "$1" in
     dev)
         cmd_dev
         ;;
-    help|--help|-h|"")
+    help|--help|-h)
         cmd_help
+        ;;
+    "")
+        cmd_default
         ;;
     *)
         log_error "Unknown command: $1"
