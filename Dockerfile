@@ -3,10 +3,12 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
-# Install system dependencies needed for compiling certain Python packages
+# Install system dependencies needed for compiling certain Python packages and converting Docx to PDF
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
+    libreoffice-writer \
+    fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install
@@ -18,10 +20,11 @@ COPY content/ ./content/
 COPY themes/ ./themes/
 COPY pelicanconf.py publishconf.py build_resume.py download_fonts.py generate_social_card.py SubbaTaniparti.docx ./
 
-# Run resume parsing, font downloading, social card generation
+# Run resume parsing, font downloading, social card generation, and Docx-to-PDF conversion
 RUN python build_resume.py
 RUN python download_fonts.py
 RUN python generate_social_card.py
+RUN libreoffice --headless --convert-to pdf SubbaTaniparti.docx --outdir content/cv/
 
 # Build the final static output
 RUN pelican content -o output -s publishconf.py
