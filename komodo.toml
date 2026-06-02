@@ -3,6 +3,8 @@
 name = "subba-portfolio"
 description = "Lead AI Engineer personal portfolio and blog for Subba Taniparti"
 compose_file = "docker-compose.yml"
+run_build = true
+
 
 [build]
 name = "subba-web-build"
@@ -11,6 +13,3 @@ context = "."
 tag = "subba-web:latest"
 autoreload = true
 
-[deploy]
-restart_policy = "unless-stopped"
-network = "subba-network"

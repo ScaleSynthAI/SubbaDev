@@ -48,22 +48,6 @@
   --border-radius-xl: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --canvas: #0c0e12; /* Deep Obsidian Slate */
-    --ink: #f3f4f6; /* Crisp Light Gray */
-    --body: #d1d5db; /* Light Gray Body */
-    --muted: #9ca3af;
-    --accent: #2dd4bf; /* Turquoise Accent */
-    --accent-hover: #ff4d8b;
-    --code-bg: #151922; /* Slate Card Surface */
-    --border: #1f2937;
-    --card-bg: #11141c;
-    --card-hover-bg: #181d28;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-  }
-}
-
 /* --- Base Reset & Setup --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
