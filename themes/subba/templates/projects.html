@@ -19,7 +19,7 @@
 <ul class="item-list">
   {% if PROJECTS_DATA %}
     {% for proj in PROJECTS_DATA %}
-    <li class="item-row project-card {{ loop.cycle('card-pink', 'card-teal', 'card-lavender', 'card-peach') }}">
+    <li class="item-row project-card {{ loop.cycle('card-ochre', 'card-teal', 'card-lavender', 'card-peach') }}">
       <div style="width: 100%;">
         <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer">{{ proj.name }}</a>
         <p class="item-row-desc">{{ proj.description }}</p>

@@ -35,7 +35,7 @@
   --body: #3a3a3a; /* Charcoal Body Text */
   --muted: #6a6a6a; /* Muted Gray */
   --accent: #1a3a3a; /* Deep Teal-Green */
-  --accent-hover: #ff4d8b; /* Pink Accent on Hover */
+  --accent-hover: #e8b94a; /* Ochre Accent on Hover */
   --code-bg: #f5f0e0; /* Cream Card Surface */
   --border: #e5e5e5; /* Subtle Hairline Border */
   --card-bg: #f5f0e0;
@@ -238,30 +238,30 @@ a:hover {
   padding: 2rem 2.25rem;
 }
 
-.card-pink {
-  background-color: #ff4d8b !important;
-  color: #ffffff !important;
-  border-color: #ff3377 !important;
+.card-ochre {
+  background-color: #e8b94a !important;
+  color: #0a0a0a !important;
+  border-color: #d1a337 !important;
 }
-.card-pink h3, .card-pink .item-row-title, .card-pink a {
-  color: #ffffff !important;
+.card-ochre h3, .card-ochre .item-row-title, .card-ochre a {
+  color: #0a0a0a !important;
 }
-.card-pink .item-row-desc {
-  color: #ffd0e0 !important;
+.card-ochre .item-row-desc {
+  color: #3b2c08 !important;
 }
-.card-pink .badge {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
+.card-ochre .badge {
+  background-color: rgba(10, 10, 10, 0.08) !important;
+  color: #0a0a0a !important;
+  border-color: rgba(10, 10, 10, 0.15) !important;
 }
-.card-pink .badge:hover {
-  background-color: #ffffff !important;
-  color: #ff4d8b !important;
-  border-color: #ffffff !important;
+.card-ochre .badge:hover {
+  background-color: #0a0a0a !important;
+  color: #e8b94a !important;
+  border-color: #0a0a0a !important;
 }
-.card-pink:hover {
-  border-color: #ff4d8b !important;
-  box-shadow: 0 12px 28px rgba(255, 77, 139, 0.25) !important;
+.card-ochre:hover {
+  border-color: #e8b94a !important;
+  box-shadow: 0 12px 28px rgba(232, 185, 74, 0.25) !important;
 }
 
 .card-teal {

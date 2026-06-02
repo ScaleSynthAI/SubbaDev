@@ -23,7 +23,6 @@ colors:
   on-primary: "#ffffff"
   on-dark: "#ffffff"
   on-dark-soft: "#a0a0a0"
-  brand-pink: "#ff4d8b"
   brand-teal: "#1a3a3a"
   brand-lavender: "#b8a4ed"
   brand-peach: "#ffb084"
@@ -185,12 +184,6 @@ components:
     backgroundColor: "{colors.surface-soft}"
     textColor: "{colors.ink}"
     rounded: "{rounded.xl}"
-  feature-card-pink:
-    backgroundColor: "{colors.brand-pink}"
-    textColor: "{colors.on-primary}"
-    typography: "{typography.title-md}"
-    rounded: "{rounded.xl}"
-    padding: 32px
   feature-card-teal:
     backgroundColor: "{colors.brand-teal}"
     textColor: "{colors.on-dark}"
@@ -303,7 +296,7 @@ Component voltage comes from **saturated single-color feature cards** in a 6-col
 **Key Characteristics:**
 - Cream-tinted white canvas (`{colors.canvas}` — #fffaf0). The warmth differentiates Clay from cool-gray competitor sites.
 - Dark navy/black primary CTAs (`{colors.primary}` — #0a0a0a). Buttons rounded `{rounded.md}` (12px) — friendly modern but not pill.
-- 6-color saturated feature card palette: `{colors.brand-pink}`, `{colors.brand-teal}`, `{colors.brand-lavender}`, `{colors.brand-peach}`, `{colors.brand-ochre}`, `{colors.surface-card}` (cream).
+- 5-color saturated feature card palette: `{colors.brand-teal}`, `{colors.brand-lavender}`, `{colors.brand-peach}`, `{colors.brand-ochre}`, `{colors.surface-card}` (cream).
 - 3D claymation illustrations (mountains, characters, abstract shapes) as full-bleed hero artifacts — the brand's most-recognized visual element.
 - Custom rounded Plain Black display typeface at 500 weight with -1 to -2.5px letter-spacing on display sizes.
 - Border radius is generous: `{rounded.md}` (12px) for buttons + inputs, `{rounded.lg}` (16px) for content cards, `{rounded.xl}` (24px) for feature cards. The bigger radius matches the rounded display type's character.
@@ -315,7 +308,6 @@ Component voltage comes from **saturated single-color feature cards** in a 6-col
 
 ### Brand & Accent
 - **Primary** (`{colors.primary}` — #0a0a0a): All primary CTAs, h1/h2 ink type. Near-black with slight warmth.
-- **Brand Pink** (`{colors.brand-pink}` — #ff4d8b): Hot-pink feature card surface. Sequencer / outbound feature pages.
 - **Brand Teal** (`{colors.brand-teal}` — #1a3a3a): Deep teal-green feature card. Often the featured pricing tier.
 - **Brand Lavender** (`{colors.brand-lavender}` — #b8a4ed): Soft lavender feature card.
 - **Brand Peach** (`{colors.brand-peach}` — #ffb084): Warm peach feature card.
@@ -447,7 +439,7 @@ The system uses no heavy shadows. Depth comes from the saturated color contrast 
 
 **`hero-illustration-card`** — Right-side artifact holding 3D claymation illustration (mountains, mascot character, abstract shapes). Background `{colors.surface-soft}`, rounded `{rounded.xl}` (24px). The illustration IS the artifact.
 
-**`feature-card-pink`** / **`feature-card-teal`** / **`feature-card-lavender`** / **`feature-card-peach`** / **`feature-card-ochre`** — Saturated single-color feature cards. Background varies per variant; rounded `{rounded.xl}` (24px); padding `{spacing.xl}` (32px). Each card carries an h3 in `{typography.title-md}`, a body description, and a product UI fragment or mascot illustration. Text color flips to `{colors.on-dark}` (white) on pink and teal cards, `{colors.ink}` (dark) on lavender/peach/ochre cards (the lighter saturations have enough contrast for dark text).
+**`feature-card-teal`** / **`feature-card-lavender`** / **`feature-card-peach`** / **`feature-card-ochre`** — Saturated single-color feature cards. Background varies per variant; rounded `{rounded.xl}` (24px); padding `{spacing.xl}` (32px). Each card carries an h3 in `{typography.title-md}`, a body description, and a product UI fragment or mascot illustration. Text color flips to `{colors.on-dark}` (white) on teal cards, `{colors.ink}` (dark) on lavender/peach/ochre cards (the lighter saturations have enough contrast for dark text).
 
 **`feature-card-cream`** — Lower-key feature card variant on `{colors.surface-card}`. Used for less-emphasized features that don't warrant a saturated color.
 
@@ -484,7 +476,7 @@ The system uses no heavy shadows. Depth comes from the saturated color contrast 
 ### Do
 - Anchor every page on the cream canvas (`{colors.canvas}` — #fffaf0). The warm tint differentiates Clay from cool-gray data sites.
 - Use 3D claymation illustrations as hero artifacts. Hand-crafted 3D characters and mountains ARE the brand.
-- Cycle saturated feature cards across the page — pink → teal → lavender → peach → ochre → cream. Repeating the same color twice in a row reads as off-rhythm.
+- Cycle saturated feature cards across the page — teal → lavender → peach → ochre → cream. Repeating the same color twice in a row reads as off-rhythm.
 - Use Plain Black at weight 500 with negative letter-spacing on every display headline.
 - Show product UI fragments inside saturated feature cards. The brand voltage is product-driven, not abstract.
 - Use cream footer (NOT dark). Clay deliberately closes pages with warm cream rather than the standard dark-footer SaaS template.
@@ -492,7 +484,7 @@ The system uses no heavy shadows. Depth comes from the saturated color contrast 
 
 ### Don't
 - Don't use cool grays for canvas. The cream tint is non-negotiable.
-- Don't use a 7th brand-color card. The 6-color palette is saturated enough.
+- Don't use a 6th brand-color card. The 5-color palette is saturated enough.
 - Don't bold display weight beyond 500. Plain Black at 700 reads as bombastic.
 - Don't repeat the same brand-color card twice in a row.
 - Don't replace claymation illustrations with flat vector art. The hand-crafted 3D character IS the brand voice.
