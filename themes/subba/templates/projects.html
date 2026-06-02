@@ -19,12 +19,12 @@
 <ul class="item-list">
   {% if PROJECTS_DATA %}
     {% for proj in PROJECTS_DATA %}
-    <li class="item-row" style="flex-direction: column; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--border);">
+    <li class="item-row project-card">
       <div style="width: 100%;">
-        <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer" style="font-size: 18px;">{{ proj.name }}</a>
-        <p class="item-row-desc" style="font-size: 15px; line-height: 1.6; margin-top: 0.5rem; max-width: var(--line-length);">{{ proj.description }}</p>
+        <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer">{{ proj.name }}</a>
+        <p class="item-row-desc">{{ proj.description }}</p>
       </div>
-      <div class="badge-row" style="margin-top: 0.75rem;">
+      <div class="badge-row">
         {% for tag in proj.tags %}
         <span class="badge">{{ tag }}</span>
         {% endfor %}

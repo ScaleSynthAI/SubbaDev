@@ -37,7 +37,7 @@
   <ul class="item-list">
     {% if PROJECTS_DATA %}
       {% for proj in PROJECTS_DATA %}
-      <li class="item-row" style="flex-direction: column; align-items: flex-start; padding: 1rem 0;">
+      <li class="item-row project-card">
         <div>
           <a class="item-row-title" href="{{ proj.url }}" target="_blank" rel="noopener noreferrer">{{ proj.name }}</a>
           <p class="item-row-desc">{{ proj.description }}</p>
