@@ -23,11 +23,6 @@ RUN python build_resume.py
 RUN python download_fonts.py
 RUN python generate_social_card.py
 
-# Ensure direct path mappings for PDF resume (both static/cv and cv/)
-RUN mkdir -p content/cv
-# If a custom pdf exists, copy it. Otherwise compile static output first.
-RUN python -c "import os; os.makedirs('content/cv', exist_ok=True); open('content/cv/SubbaTaniparti.pdf', 'wb').write(b'%PDF-1.4 ... dynamic PDF')"
-
 # Build the final static output
 RUN pelican content -o output -s publishconf.py
 
