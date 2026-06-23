@@ -733,6 +733,76 @@ pre {
   50% { opacity: 0; }
 }
 
+/* --- Article: Tables --- */
+.post-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+}
+.post-content table thead th {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+.post-content table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.post-content table tbody tr:last-child {
+  border-bottom: none;
+}
+.post-content table tbody tr:hover {
+  background-color: var(--card-hover-bg);
+}
+.post-content table tbody td {
+  padding: 10px 14px;
+  color: var(--body);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.post-content table tbody td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --- Article: Blockquotes (callouts / TL;DR) --- */
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  background-color: var(--card-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  margin: 1.75rem 0;
+}
+.post-content blockquote p {
+  font-size: 15px;
+  color: var(--body);
+  margin-bottom: 0;
+  line-height: 1.65;
+  max-width: none;
+}
+.post-content blockquote strong {
+  color: var(--ink);
+}
+
+/* --- Article: Section dividers (---) --- */
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.75rem 0;
+}
+
 /* --- Mobile Responsive Queries --- */
 @media (max-width: 768px) {
   .console-controls {
