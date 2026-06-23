@@ -2,7 +2,7 @@
 [stack]
 name = "subba-portfolio"
 description = "Lead AI Engineer personal portfolio and blog for Subba Taniparti"
-compose_file = "docker-compose.yml"
+compose_file = "compose.yaml"
 run_build = true
 
 
