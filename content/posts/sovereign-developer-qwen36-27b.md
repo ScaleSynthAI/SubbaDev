@@ -55,7 +55,7 @@ When quantized to 4-bit or 5-bit precision using Ollama's GGUF pipeline, the 27B
 
 - Multi-step function generation with type safety
 - Debugging circular import resolution in Python monorepos
-- Architectural design documentation for microservice拆分
+- Architectural design documentation for microservice decomposition
 - Git history analysis for feature attribution across ten commits
 
 In every case, the local Qwen 3.6 27B's output was within an inch of what Claude Sonnet 3.7 or GPT-4o would produce — but with sub-second first-token latency and no billing meter watching over my shoulder.
